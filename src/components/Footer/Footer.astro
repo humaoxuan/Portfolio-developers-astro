@@ -1,7 +1,25 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
 
-<footer>
+<footer class="py-12 border-t border-white/5 bg-gray-950/50 backdrop-blur-sm">
+    <div
+        class="max-w-7xl mx-auto px-6 flex flex-row items-center justify-center gap-4 text-center"
+    >
+        <p class="text-gray-400 text-sm md:text-base">
+            Developed with love by <span class="text-white font-medium italic"
+                >Lautaro Rodriguez Collins</span
+            >
+        </p>
 
-</footer>   
+        <a
+            href="https://github.com/Lautaro-R-collins"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
+            aria-label="Lautaro Rodriguez's GitHub"
+        >
+            <Icon name="lucide:github" class="size-6" />
+        </a>
+    </div>
+</footer>

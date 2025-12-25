@@ -2,16 +2,74 @@
     id="about"
     class="py-24 px-6 max-w-7xl mx-auto flex flex-col items-center justify-center min-h-screen"
 >
-    <h2 class="text-4xl md:text-6xl font-bold text-white mb-12">About Me</h2>
-    <div
-        class="bg-gray-900/50 backdrop-blur-md p-8 rounded-3xl border border-white/10 max-w-3xl"
+    <h2
+        class="text-4xl md:text-6xl font-bold text-white mb-16 text-center text-shadow-purple"
     >
-        <p class="text-xl text-gray-300 leading-relaxed mb-6">
-            Here you can describe your journey, your skills, and what makes you
-            a great developer.
-        </p>
-        <p class="text-xl text-gray-300 leading-relaxed">
-            This section is ready for you to fill with your own story!
-        </p>
+        About Me
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Photo Column -->
+        <div
+            class="relative group mx-auto drop-shadow-[8px_8px_0_#7836cf]"
+            data-aos="fade-right"
+        >
+            <div class="absolute -inset-1 rounded-2xl"></div>
+            <div class="relative">
+                <img
+                    src="/images/jhon-doe.png"
+                    alt="Jhon Doe Portrait"
+                    class="rounded-2xl w-full max-w-sm object-cover"
+                />
+            </div>
+        </div>
+
+        <!-- Description Column -->
+        <div class="flex flex-col gap-6" data-aos="fade-left">
+            <h3 class="text-3xl font-bold text-primary">
+                Who stands behind the code?
+            </h3>
+            <p
+                class="text-lg md:text-xl text-gray-300 leading-relaxed font-light"
+            >
+                Hi! I'm <span class="text-white font-semibold">Jhon Doe</span>,
+                a Full Stack Developer with a passion for building digital
+                experiences that marry form and function. With over 3 years of
+                experience, I've specialized in creating robust architectures
+                and fluid user interfaces.
+            </p>
+            <p
+                class="text-lg md:text-xl text-gray-300 leading-relaxed font-light"
+            >
+                My journey started with a curiosity for how things work under
+                the hood, leading me to master modern technologies like <span
+                    class="text-primary font-medium italic"
+                    >Astro, React, and Node.js</span
+                >.
+            </p>
+            <div class="flex flex-wrap gap-4 mt-4">
+                <div
+                    class="px-4 py-2 bg-white/5 rounded-full border border-white/10 text-sm font-medium text-gray-400"
+                >
+                    🚀 Fast Learner
+                </div>
+                <div
+                    class="px-4 py-2 bg-white/5 rounded-full border border-white/10 text-sm font-medium text-gray-400"
+                >
+                    💡 Problem Solver
+                </div>
+                <div
+                    class="px-4 py-2 bg-white/5 rounded-full border border-white/10 text-sm font-medium text-gray-400"
+                >
+                    🤝 Team Player
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
+<style>
+    .text-shadow-purple {
+        text-shadow: 2px 2px 0 #870deb;
+    }
+</style>

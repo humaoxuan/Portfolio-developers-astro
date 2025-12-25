@@ -1,7 +1,9 @@
 ---
 import "../styles/global.css";
+import "../styles/stars.css";
 import Navbar from "../components/Navbar/NavBar.astro";
 import Footer from "../components/Footer/Footer.astro";
+import "aos/dist/aos.css";
 ---
 
 <!doctype html>
@@ -14,6 +16,9 @@ import Footer from "../components/Footer/Footer.astro";
 		<title>AstroGym</title>
 	</head>
 	<body class="bg-gray-950 text-white">
+		<div id="stars"></div>
+		<div id="stars2"></div>
+		<div id="stars3"></div>
 		<Navbar />
 		<slot />
 		<Footer />
@@ -35,5 +40,15 @@ import Footer from "../components/Footer/Footer.astro";
 				}
 			}
 		</style>
+
+		<script>
+			import AOS from "aos";
+			AOS.init({
+				duration: 1000,
+				easing: "ease-out-cubic",
+				once: true,
+				offset: 100,
+			});
+		</script>
 	</body>
 </html>

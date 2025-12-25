@@ -1,0 +1,88 @@
+---
+import { Icon } from "astro-icon/components";
+import LinkButton from "./LinkButton.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    image: string;
+    tags: Array<{
+        name: string;
+        class: string;
+        icon: string;
+    }>;
+    link?: string;
+    github?: string;
+}
+
+const { image, title, description, tags, link, github } = Astro.props;
+---
+
+<article
+    class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-16 md:space-y-0 items-center"
+    data-aos="fade-up"
+>
+    <!-- Image Container (Smaller on desktop) -->
+    <div class="w-full md:w-2/5">
+        <div
+            class="relative flex flex-col items-center gap-8 transition duration-500 ease-in-out transform shadow-2xl overflow-clip rounded-2xl md:group-hover:-translate-y-2 md:group-hover:shadow-[0_0_30px_rgba(120,54,207,0.3)] border border-white/10 hover:border-primary/50 bg-gray-900/50"
+        >
+            <img
+                alt={title}
+                class="object-cover object-top w-full aspect-video transition duration-500 md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+            />
+        </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="w-full md:w-3/5">
+        <h3
+            class="text-3xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300"
+        >
+            {title}
+        </h3>
+
+        <ul class="flex flex-wrap mb-6 gap-2">
+            {
+                tags.map((tag) => (
+                    <li>
+                        <span
+                            class:list={[
+                                "flex items-center gap-x-2 rounded-full text-xs py-1.5 px-3 border border-white/5",
+                                tag.class,
+                            ]}
+                        >
+                            <Icon name={tag.icon} class="size-4" />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))
+            }
+        </ul>
+
+        <p class="text-lg text-gray-300 mb-8 leading-relaxed font-light">
+            {description}
+        </p>
+
+        <footer class="flex items-center justify-start gap-x-4">
+            {
+                github && (
+                    <LinkButton href={github}>
+                        <Icon name="lucide:github" class="size-5" />
+                        Source Code
+                    </LinkButton>
+                )
+            }
+            {
+                link && (
+                    <LinkButton href={link}>
+                        <Icon name="lucide:external-link" class="size-4" />
+                        Live Demo
+                    </LinkButton>
+                )
+            }
+        </footer>
+    </div>
+</article>
