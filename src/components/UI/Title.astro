@@ -1,0 +1,39 @@
+---
+interface Props {
+    level?: 1 | 2 | 3;
+    class?: string;
+    animate?: boolean;
+    "data-aos"?: string;
+    "data-aos-delay"?: string;
+}
+
+const {
+    level = 2,
+    class: className,
+    animate = false,
+    "data-aos": aos,
+    "data-aos-delay": aosDelay,
+} = Astro.props;
+const Tag = `h${level}` as any;
+---
+
+<Tag
+    class:list={[
+        level === 1 &&
+            "text-4xl md:text-8xl font-bold mb-6 text-shadow-purple text-center text-white",
+        level === 2 &&
+            "text-4xl md:text-6xl font-bold text-white mb-16 text-center text-shadow-purple",
+        level === 3 && "text-3xl font-bold text-primary",
+        className,
+    ]}
+    data-aos={aos || (animate ? "fade-up" : undefined)}
+    data-aos-delay={aosDelay}
+>
+    <slot />
+</Tag>
+
+<style>
+    .text-shadow-purple {
+        text-shadow: 2px 2px 0 #870deb;
+    }
+</style>
