@@ -1,10 +1,10 @@
 {
-  "name": "my-project",
+  "name": "portfolio-astro",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "NODE_OPTIONS=--max-old-space-size=4096 astro dev",
+    "build": "NODE_OPTIONS=--max-old-space-size=4096 astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
