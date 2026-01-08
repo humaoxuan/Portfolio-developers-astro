@@ -10,9 +10,9 @@ export const PERSONAL_INFO = {
         {
             href: "https://www.linkedin.com/in/aaron-hu-dev/",
             label: "LinkedIn",
+            icon: "linkedin",
         },
-        { href: "https://github.com/aaron-hu-dev", label: "GitHub" },
-        // { href: "https://x.com/", label: "Twitter" },
-        { href: "mailto:aaron@aaronhu.dev", label: "Email" },
+        { href: "https://github.com/aaron-hu-dev", label: "GitHub", icon: "github" },
+        { href: "mailto:aaron@aaronhu.dev", label: "Email", icon: "mail" },
     ],
 };
