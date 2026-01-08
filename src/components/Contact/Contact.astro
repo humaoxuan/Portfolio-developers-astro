@@ -2,6 +2,7 @@
 import { PERSONAL_INFO } from "../../data/personal";
 import Section from "../UI/Section.astro";
 import Title from "../UI/Title.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Section id="contact" title="Get in Touch" titleClassName="mb-8">
@@ -23,14 +24,17 @@ import Title from "../UI/Title.astro";
         {
             PERSONAL_INFO.socialLinks &&
                 PERSONAL_INFO.socialLinks.map((link) => (
-                    <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="block font-bold w-full rounded-xl bg-[#140d7c] hover:bg-[#0f0a55] drop-shadow-[5px_5px_0_#870deb] px-6 py-4 text-center text-white"
-                    >
-                        {link.label}
-                    </a>
+                    <div class="flex items-center gap-4">
+                        <Icon name={`lucide:${link.icon}`} class="size-6 md:size-8" />
+                        <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="block font-bold w-full rounded-xl bg-[#140d7c] hover:bg-[#0f0a55] drop-shadow-[5px_5px_0_#870deb] px-6 py-4 text-center text-white"
+                        >
+                            {link.label}
+                        </a>
+                    </div>
                 ))
         }
     </div>
