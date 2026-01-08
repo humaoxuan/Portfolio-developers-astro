@@ -7,12 +7,15 @@ import icon from 'astro-icon';
 export default defineConfig({
   integrations: [icon()],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      exclude: ['@astrojs/node']
+    }
   },
 	server: {
 		allowedHosts:[
 			'aaronhu.dev'
-		],
+		]
 	},
 
 });
