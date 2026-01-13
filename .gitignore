@@ -25,3 +25,4 @@ pnpm-debug.log*
 .idea/
 pnpm-lock.yaml
 public/resume.pdf
+deploy-dist.sh
